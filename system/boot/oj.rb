@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-Application.boot(:oj) do
-  init do
+Application.register_provider(:oj) do
+  prepare do
     require 'oj'
   end
 

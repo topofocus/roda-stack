@@ -2,8 +2,8 @@
 
 # This file contains configuration for ActiveSupport module.
 
-Application.boot(:active_support) do
-  init do
+Application.register_provider(:active_support) do
+  prepare do
     require 'active_support/message_verifier'
     require 'active_support/json'
   end

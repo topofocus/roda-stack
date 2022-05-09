@@ -2,25 +2,15 @@
 
 source 'https://rubygems.org'
 
-ruby '3.0.0'
 
 # Routing Tree Web Toolkit.
-gem 'roda', '>= 3.38'
+gem 'roda'
 
 # Use Puma as the app server.
-gem 'puma', '~> 5.2'
+gem 'puma'
 
 # A make-like build utility for Ruby.
 gem 'rake'
-
-# Sequel: The Database Toolkit for Ruby.
-gem 'sequel', '>= 5.38'
-
-# Faster SELECTs when using Sequel with pg.
-gem 'sequel_pg', '>= 1.14'
-
-# A runtime developer console and IRB alternative with powerful introspection capabilities.
-gem 'pry'
 
 # Ruby internationalization and localization (i18n) solution.
 gem 'i18n'
@@ -32,7 +22,7 @@ gem 'yard'
 gem 'oj'
 
 # A toolkit of support libraries and Ruby core extensions extracted from the Rails framework.
-gem 'activesupport', '>= 6.0.3.4'
+gem 'activesupport'
 
 # bcrypt-ruby is a Ruby binding for the OpenBSD bcrypt() password hashing algorithm, allowing you to easily store a secure hash of your users' passwords.
 gem 'bcrypt'
@@ -48,6 +38,18 @@ gem 'faker'
 
 # Organize your code into reusable components.
 gem 'dry-system'
+
+# load aracdedb from the local file system
+gem 'arcadedb', path: "../arcadedb"
+
+gem 'pastel'
+
+gem 'terminal-table'
+
+gem 'pg'
+
+gem 'zeitwerk'
+
 
 group :development do
   # Preview mail in the browser instead of sending.

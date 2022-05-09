@@ -2,18 +2,29 @@
 
 # This file contain code to setup the database connection.
 
-Application.boot(:database) do |container|
+Application.register_provider(:database) do |container|
   # Load environment variables before setting up database connection.
-  use :environment_variables
 
-  init do
-    require 'sequel/core'
+  prepare do
+
+    module Arcade
+      ProjectRoot = Pathname.new File.expand_path("../../../",__FILE__)
+    # check if the former does not fit
+      # ProjectRoot = Dir["#{File.expand_path('config/locales')}/*.yml"]
+    end
+    require 'arcade'
+
+
+    loader = Zeitwerk::Loader.new
+    loader.push_dir(Arcade::ProjectRoot.join("model"))
+    loader.setup
   end
 
   start do
     # Delete DATABASE_URL from the environment, so it isn't accidently passed to subprocesses.
-    database = Sequel.connect(ENV.delete('DATABASE_URL'))
+    target.start :environment_variables
+    database = Arcade::Init.connect Application.env
 
-    container.register(:database, database)
+    container.register(:db, database)
   end
 end

@@ -2,8 +2,8 @@
 
 # This file contains setup for Ruby internationalization and localization (i18n).
 
-Application.boot(:i18n) do
-  init do
+Application.register_provider(:i18n) do
+  prepare do
     require 'i18n'
   end
 
@@ -12,9 +12,9 @@ Application.boot(:i18n) do
     I18n.load_path << Dir["#{File.expand_path('config/locales')}/*.yml"]
 
     # Add :pl to to the list of available locales.
-    I18n.config.available_locales = %i[en pl]
+    I18n.config.available_locales = %i[en de]
 
     # Set default locale to :pl.
-    I18n.default_locale = :pl
+    I18n.default_locale = :en
   end
 end

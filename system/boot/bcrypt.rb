@@ -2,8 +2,8 @@
 
 # This file contains configuration for bcrypt.
 
-Application.boot(:bcrypt) do
-  init do
+Application.register_provider(:bcrypt) do
+  prepare do
     require 'bcrypt'
   end
 

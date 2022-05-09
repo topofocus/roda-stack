@@ -32,5 +32,5 @@ environment ENV['RACK_ENV'] || 'development'
 # that were opened when preloading the code.
 # This can be called multiple times to add hooks.
 before_fork do
-  Sequel::Model.db.disconnect if defined?(Sequel::Model)
+#  Sequel::Model.db.disconnect if defined?(Sequel::Model)
 end

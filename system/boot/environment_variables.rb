@@ -2,7 +2,7 @@
 
 # This file contains setup for environment variables using Dotenv.
 
-Application.boot(:environment_variables) do
+Application.register_provider(:environment_variables) do
   start do
     env = Application.env
 

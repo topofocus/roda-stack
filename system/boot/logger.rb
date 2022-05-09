@@ -2,15 +2,15 @@
 
 # This file contains logger configuration
 
-Application.boot(:logger) do
-  init do
+Application.register_provider(:logger) do
+  prepare do
     require 'logger'
   end
 
   start do
     # Define Logger instance.
     logger       = Logger.new($stdout)
-    logger.level = Logger::WARN if Application.env == 'test'
+    logger.level = Logger::INFO # WARN if Application.env == 'test'
 
     register(:logger, logger)
   end

@@ -5,5 +5,45 @@
 # The ruby bin/console let's you interact with your application from the command line.
 
 require_relative '../system/boot'
+require 'pastel'
+include Arcade
 
-Pry.start
+def intro 
+p =  Pastel.new
+c =  p.bright_white.bold.on_yellow.detach
+g =  p.green.on_black.detach
+  puts "-"*80
+  puts " Namespace is: Arcade ! "
+  puts ""
+  puts c[" Essential ArcadeDB-Statements                                                  "]
+  puts " ----------------------------"
+  puts g[" Api.databases "] + "                  # returns an Array of known databases "
+  puts g[" Api.create_database <a string> "] + " # returns true if successfull   "
+  puts g[" Api.drop_database   <a string> "]
+  puts ""
+  puts c[" DB "] + "  points to the current database "
+  puts ""
+  puts g["DB.hierarchy type: :edge | :document | :vertex "] + "# prints available types"
+  puts "" 
+  puts " submit queries"
+  puts " ----------------------------"
+  puts g[" DB.execute { <query> } "]+"        # submit query as block"
+  puts g[" DB.query  <query>  "]
+  puts ""
+  puts " Display this helpscreen:  "+ g["intro"]
+  puts "-"*80
+  puts ""
+end
+
+intro
+e=  ARGV.empty? ? :development :  ARGV.last.downcase.to_sym
+## load test model files
+#require "#{__dir__}/../spec/model_helper"
+
+DB = Arcade::Init.connect e
+#require 'pry'
+require 'irb'
+ARGV.clear
+IRB.start(__FILE__)
+#Pry.start(__FILE__)
+
