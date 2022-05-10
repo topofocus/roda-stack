@@ -14,7 +14,9 @@ Application.register_provider(:database) do |container|
     end
     require 'arcade'
 
-
+    module Hy
+      # empty 
+    end
     loader = Zeitwerk::Loader.new
     loader.push_dir(Arcade::ProjectRoot.join("model"))
     loader.setup
