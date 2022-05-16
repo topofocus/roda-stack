@@ -77,9 +77,14 @@ group :development, :test do
 
   # RSpec meta-gem that depends on the other components.
   gem 'rspec'
+  gem 'rspec-its'
+  gem 'rspec-given'
+  gem 'rspec-context-private'
+  gem 'rspec-legacy_formatters'
+  gem 'rspec-collection_matchers'
 
   gem "guard"
-  gem "guard-rpec"
+  gem "guard-rspec"
 
   # Rack::Test is a layer on top of Rack's MockRequest similar to Merb's RequestHelper.
   gem 'rack-test'

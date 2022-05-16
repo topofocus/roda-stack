@@ -8,8 +8,8 @@ Application.register_provider(:i18n) do
   end
 
   start do
-    # Load all locale .ym lfiles in /config/locales folder.
-    I18n.load_path << Dir["#{File.expand_path('config/locales')}/*.yml"]
+    # Load all locale .yml files in /config/locales folder.
+    I18n.load_path << Dir["#{Application.root + 'config/locales'}/*.yml"]
 
     # Add :pl to to the list of available locales.
     I18n.config.available_locales = %i[en de]
