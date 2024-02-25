@@ -40,13 +40,11 @@ gem 'faker'
 gem 'dry-system'
 
 # load aracdedb from the local file system
-gem 'arcadedb', path: "../arcadedb"
+gem 'arcadedb'
 
 gem 'pastel'
 
 gem 'terminal-table'
-
-gem 'pg'
 
 gem 'zeitwerk'
 
