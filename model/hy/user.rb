@@ -31,7 +31,7 @@ CREATE PROPERTY hy_user.surname STRING
 CREATE PROPERTY hy_user.email STRING
 CREATE PROPERTY hy_user.wallet STRING
 CREATE PROPERTY hy_user.authentication_token STRING
-CREATE INDEX `User[name]` ON hy_user ( name ) NOTUNIQUE
-CREATE INDEX `User[allnames` ON hy_user ( name, surname, email ) UNIQUE
-CREATE INDEX `User[wallet]` ON hy_user ( wallet ) UNIQUE
-CREATE INDEX `User[token]` ON hy_user ( authentication_token ) UNIQUE
+CREATE INDEX  ON hy_user ( name ) NOTUNIQUE
+CREATE INDEX  ON hy_user ( name, surname, email ) UNIQUE
+CREATE INDEX  ON hy_user ( wallet ) UNIQUE
+CREATE INDEX  ON hy_user ( authentication_token ) UNIQUE
