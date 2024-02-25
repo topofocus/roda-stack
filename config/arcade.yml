@@ -1,26 +1,23 @@
 ---
 ## ArcadeDB Credentials
-:pg:
- :host: localhost # 172.28.50.25 
- :port: 5432
 :environment:
   :test:
     dbname: test
     user:  root
-    pass: topo1focus
+    pass: ***
   :development:
     dbname: devel
     user: root
-    pass: topo1focus
+    pass: ***
   :production:
     dbname: DeFi
     user: root
-    pass: topo1focus
+    pass: ***
 :admin:
   :host: localhost
   :port: 2480
   :user: root
-  :pass: topo1focus 
+  :pass: *** 
 :logger: stdout           # 'file' or 'stdout'
 :namespace: Arcade
 
